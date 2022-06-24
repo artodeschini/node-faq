@@ -1,3 +1,4 @@
+const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
 
@@ -6,6 +7,11 @@ app.set("view engine", "ejs");
 //arquivos estaticos js, css, imagens etc 
 app.use(express.static("public"));
 
+//decodifica os dados enviados pelo formuário
+app.use(bodyParser.urlencoded({extended: false}));
+
+// permite que envie dados como json uso em api
+app.use(bodyParser.json());
 
 
 // rotas
@@ -16,6 +22,14 @@ app.get("/", (req, res) =>{
 // rotas
 app.get("/perguntar", (req, res) =>{
     res.render("perguntar")
+});
+
+app.post("/salvarpergunta", (req, res) => {
+    let titulo = req.body.titulo;
+    let descricao = req.body.descricao;
+    console.log(titulo);
+    console.log(descricao);
+    res.send("formulario recebido");
 });
 
 

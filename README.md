@@ -9,6 +9,7 @@
 * npm
 * express
 * ejs
+* body-parser
 * html
 * css
 * bootstrep
@@ -44,4 +45,10 @@ npm install express --save
 
 ```bash
 npm install ejs --save
+```
+
+## install body-parse pega os dados do formuário
+
+```bash
+npm install body-parser --save
 ```
