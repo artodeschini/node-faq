@@ -6,8 +6,14 @@ app.set("view engine", "ejs");
 //arquivos estaticos js, css, imagens etc 
 app.use(express.static("public"));
 
-// rotas
 
+
+// rotas
+app.get("/", (req, res) =>{
+    res.render("index")
+});
+
+// testes base
 app.get("/teste1",(req, res) => { //acessos http://localhost/teste1
     let nome = "Artur Todeschini";
     let lang = "javascript";
