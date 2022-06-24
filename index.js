@@ -3,6 +3,9 @@ const app = express();
 
 app.set("view engine", "ejs");
 
+//arquivos estaticos js, css, imagens etc 
+app.use(express.static("public"));
+
 // rotas
 
 app.get("/teste1",(req, res) => { //acessos http://localhost/teste1
