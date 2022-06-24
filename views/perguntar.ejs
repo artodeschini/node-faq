@@ -6,20 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perguntas e Respostas</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    <nav class="navbar navbar-light bg-primary">
+        <a href="/" class="navbar-brand">
+            <!-- <img src="/img/logo.png"> -->
+            Logo
+        </a>
+    </nav>
     <div class="container">
-       <h3>Realizar pergunta</h3>
-       <hr>
-       <form>
-            <label>Titulo</label>
-            <input type="text" name="" id="" placeholder="titulo" class="form-control"/>
-            <br>
-            <label>Descrição</label>
-            <textarea placeholder="Descreva sua pergunta aqui" class="form-control"></textarea>
-            <br>
-            <button class="btn btn-success">Perguntar</button>
-       </form>
+        <div class="card" id="form-peergunta">
+            <h3>Realizar pergunta</h3>
+        </div>
+        <div class="card-body">
+            <form>
+                <label>Titulo</label>
+                <input type="text" name="" id="" placeholder="titulo" class="form-control"/>
+                <br>
+                <label>Descrição</label>
+                <textarea placeholder="Descreva sua pergunta aqui" class="form-control"></textarea>
+                <br>
+                <button class="btn btn-primary">Perguntar</button>
+           </form>
+        </div>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
