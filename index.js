@@ -13,6 +13,12 @@ app.get("/", (req, res) =>{
     res.render("index")
 });
 
+// rotas
+app.get("/perguntar", (req, res) =>{
+    res.render("perguntar")
+});
+
+
 // testes base
 app.get("/teste1",(req, res) => { //acessos http://localhost/teste1
     let nome = "Artur Todeschini";
