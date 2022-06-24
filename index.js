@@ -8,12 +8,14 @@ app.set("view engine", "ejs");
 app.get("/teste1",(req, res) => { //acessos http://localhost/teste1
     let nome = "Artur Todeschini";
     let lang = "javascript";
+    let showMsg = true;
 
-    res.render("testes", {
+    res.render("testes/testes1", {
         nome: nome,
         lang: lang,
         "organizacao" : "Todeschini",
-        "inscritos" : nome
+        "inscritos" : nome,
+        "msg" : showMsg
     });
 });
 
@@ -21,12 +23,27 @@ app.get("/teste1",(req, res) => { //acessos http://localhost/teste1
 app.get("/teste2/:nome/:lang",(req, res) => { //acessos http://localhost/teste2/Artur/Java
     let nome = req.params["nome"];
     let lang = req.params["lang"];
+    let showMsg = false;
 
-    res.render("testes", {
+    res.render("testes/testes2", {
         nome: nome,
         lang: lang,
         "organizacao" : "Todeschini",
-        "inscritos" : nome
+        "inscritos" : nome,
+        "msg" : showMsg
+    });
+});
+
+app.get("/teste3",(req, res) => { //acessos http://localhost/teste3
+
+    let produtos =[
+        {nome: "Coca-Cola", quantidade: 2, unidade: "litro", preco: 5.5},
+        {nome: "Doritos", quantidade: 1, unidade: "Saco", preco: 2.0},
+        {nome: "Livro", quantidade: 1, unidade: "livro", preco: 100.5}
+    ];
+
+    res.render("testes/testes3", {
+        produtos: produtos
     });
 });
 

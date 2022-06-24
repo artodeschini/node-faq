@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de uso de forEach com EJS</title>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Quantidade</td>
+                <td>Unidade</td>
+                <td>Preço</td>
+            </tr>
+        </thead>
+
+ 
+    <% produtos.forEach( function(p) {%>
+       <tbody>
+            <tr>
+                <td><%= p.nome %></td>
+                <td><%= p.quantidade %></td>
+                <td><%= p.unidade %></td>
+                <td><%= p.preco %></td>
+            </tr>
+       </tbody>
+    <% }); %>
+    </table>
+</body>
+</html>
