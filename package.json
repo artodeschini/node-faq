@@ -1,0 +1,30 @@
+{
+  "name": "perguntas-e-respostas",
+  "version": "1.0.0",
+  "description": "Projeto com nodejs e mysql com perguntas e respostas FAQ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artodeschini/node-faq.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql",
+    "bootstrap",
+    "ejs"
+  ],
+  "author": "Artur Todeschini Crestani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artodeschini/node-faq/issues"
+  },
+  "homepage": "https://github.com/artodeschini/node-faq#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}
