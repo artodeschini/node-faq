@@ -13,6 +13,19 @@ app.use(bodyParser.urlencoded({extended: false}));
 // permite que envie dados como json uso em api
 app.use(bodyParser.json());
 
+const connection = require("./database/database");
+
+const perguntaModel = require("./database/Pergunta");
+
+connection.authenticate()
+    .then(() => {
+        console.log("conexao feita com banco de dados");
+    })
+    .catch((msgErro) => {
+        console.log(msgErro);
+    });
+
+
 
 // rotas
 app.get("/", (req, res) =>{

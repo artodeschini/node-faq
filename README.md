@@ -13,6 +13,7 @@
 * html
 * css
 * bootstrep
+* docker
 
 ## install all tecnologias
 
@@ -51,4 +52,52 @@ npm install ejs --save
 
 ```bash
 npm install body-parser --save
+```
+
+## install sequelize para conexao com bancos de dados sql
+
+```bash
+npm install --save sequelize
+```
+
+## install mariadb para conexoes com mariadb
+
+```bash
+# npm install --save mysql2
+npm install --save mariadb
+```
+
+## docker mariadb
+
+```bash
+#docker run --name mysql -p 3306:3306 -d  mysql/mysql-serv
+docker run --name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql/mysql-server:latest
+
+# check container up
+docker ps
+
+# verifica se o servico subiu corretamente no container
+docker logs mysql
+
+# acesso direto ao container
+docker exec -it mysql /bin/bash
+```
+
+## acesso externo ao docker do mysql
+
+```sql
+mysql -u root -p
+
+
+update mysql.user set host='%' where user='root';
+
+FLUSH PRIVILEGES;
+```
+
+## para sair do mysqld use \q
+
+## restart container
+
+```bash
+docker restart mysql
 ```
