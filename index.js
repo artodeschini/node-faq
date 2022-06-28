@@ -29,7 +29,9 @@ connection.authenticate()
 
 // rotas
 app.get("/", (req, res) =>{
-    Pergunta.findAll({raw: true}).then(perguntas => { // raw: true faz só trazer os dados
+    Pergunta.findAll({raw: true, order:[ // raw: true faz só trazer os dados
+        ['id', 'DESC'] // ou ASC array de campo e ordem 
+    ]}).then(perguntas => { 
         res.render("index", {
             perguntas: perguntas
         })
