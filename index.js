@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 const connection = require("./database/database");
 
-const perguntaModel = require("./database/Pergunta");
+const Pergunta = require("./database/Pergunta");
 
 connection.authenticate()
     .then(() => {
@@ -29,7 +29,12 @@ connection.authenticate()
 
 // rotas
 app.get("/", (req, res) =>{
-    res.render("index")
+    Pergunta.findAll({raw: true}).then(perguntas => { // raw: true faz só trazer os dados
+        res.render("index", {
+            perguntas: perguntas
+        })
+    });
+    //res.render("index")
 });
 
 // rotas
@@ -38,11 +43,17 @@ app.get("/perguntar", (req, res) =>{
 });
 
 app.post("/salvarpergunta", (req, res) => {
-    let titulo = req.body.titulo;
-    let descricao = req.body.descricao;
-    console.log(titulo);
-    console.log(descricao);
-    res.send("formulario recebido");
+    let _titulo = req.body.titulo;
+    let _descricao = req.body.descricao;
+    console.log(_titulo);
+    console.log(_descricao);
+    //res.send("formulario recebido");
+    Pergunta.create({
+        titulo: _titulo,
+        descricao: _descricao
+    }).then(() => {
+        res.redirect("");
+    })
 });
 
 

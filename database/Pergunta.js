@@ -6,13 +6,15 @@ const Pergunta = connection.define('pergunta', { // nome da tabela
         type: sequelize.STRING,
         allowNull: false
     },
-    'descrição': {
+    'descricao': {
         type: sequelize.TEXT,
         allowNull: false
     }
 });
 
 Pergunta.sync({force: false}) //faz criar a tabela, mas nao força recriar a tabela
-    .then(() =>{
-        console.log("tabela criada");
-    })
+.then(() =>{
+    console.log("tabela criada");
+});
+
+module.exports = Pergunta;

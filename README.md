@@ -70,6 +70,7 @@ npm install --save mariadb
 ## docker mariadb
 
 ```bash
+docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7.22
 #docker run --name mysql -p 3306:3306 -d  mysql/mysql-serv
 docker run --name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql/mysql-server:latest
 
