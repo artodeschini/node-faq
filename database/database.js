@@ -1,7 +1,6 @@
 const { Sequelize } = require('sequelize');
 
 //npm install --save sequelize
-
 // # One of the following:
 // $ npm install --save pg pg-hstore # Postgres
 // $ npm install --save mysql2

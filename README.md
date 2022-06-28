@@ -4,7 +4,8 @@
 
 * javascript
 * git
-* mysql
+* sql
+* postgres
 * nodejs
 * npm
 * express
@@ -60,45 +61,23 @@ npm install body-parser --save
 npm install --save sequelize
 ```
 
-## install mariadb para conexoes com mariadb
+## install postgres para conexoes com mariadb
 
 ```bash
-# npm install --save mysql2
-npm install --save mariadb
+npm install --save pg pg-hstore # Postgres
 ```
 
-## docker mariadb
+## docker postgres
 
 ```bash
-docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7.22
-#docker run --name mysql -p 3306:3306 -d  mysql/mysql-serv
-docker run --name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql/mysql-server:latest
+docker run -d -p 5432:5432 -v ${PWD}:/share --name postgres -e POSTGRES_PASSWORD=postgres
 
-# check container up
-docker ps
+## to create database into container
 
-# verifica se o servico subiu corretamente no container
-docker logs mysql
-
-# acesso direto ao container
-docker exec -it mysql /bin/bash
 ```
-
-## acesso externo ao docker do mysql
-
-```sql
-mysql -u root -p
-
-
-update mysql.user set host='%' where user='root';
-
-FLUSH PRIVILEGES;
-```
-
-## para sair do mysqld use \q
 
 ## restart container
 
 ```bash
-docker restart mysql
+docker restart postgres
 ```

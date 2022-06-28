@@ -25,6 +25,13 @@ connection.authenticate()
         console.log(msgErro);
     });
 
+// try {
+//     await connection.authenticate();
+//     console.log('Connection has been established successfully.');
+//   } catch (error) {
+//     console.error('Unable to connect to the database:', error);
+//   }    
+
 
 
 // rotas
@@ -54,7 +61,7 @@ app.post("/salvarpergunta", (req, res) => {
         titulo: _titulo,
         descricao: _descricao
     }).then(() => {
-        res.redirect("");
+        res.redirect("/");
     })
 });
 
