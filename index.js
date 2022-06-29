@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 const connection = require("./database/database");
 
 const Pergunta = require("./database/Pergunta");
+const Resposta = require("./database/Resposta");
 
 connection.authenticate()
     .then(() => {
@@ -49,6 +50,24 @@ app.get("/", (req, res) =>{
 // rotas
 app.get("/perguntar", (req, res) =>{
     res.render("perguntar")
+});
+
+app.get("/pergunta/:id", (req, res) =>{
+    let id = req.params.id;
+    // testar se poderia ser findByPk
+    Pergunta.findOne({
+        where: {id: parseInt(id)}
+    }).then(pergunta => {
+        if (pergunta != undefined) {
+            //console.log(pergunta);
+            res.render("pergunta", {
+                pergunta: pergunta
+            });
+        } else { // not found
+            res.redirect("/");
+        }
+    })
+    //res.render("perguntar")
 });
 
 app.post("/salvarpergunta", (req, res) => {
@@ -111,4 +130,4 @@ app.get("/teste3",(req, res) => { //acessos http://localhost/teste3
 
 app.listen(80, () => {
     console.log("Aplicação start");
-})
+});
