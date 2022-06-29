@@ -80,3 +80,13 @@ docker run -d -p 5432:5432 -v ${PWD}:/share --name postgres -e POSTGRES_PASSWORD
 ```bash
 docker restart postgres
 ```
+
+## para rodar app em produção
+
+```bash
+sudo npm install -g pm2 # installar pm2
+
+# start app como demon
+
+pm2 start index.js # roda a app em background
+```
