@@ -73,7 +73,6 @@ npm install --save pg pg-hstore # Postgres
 docker run -d -p 5432:5432 -v ${PWD}:/share --name postgres -e POSTGRES_PASSWORD=postgres
 
 ## to create database into container
-
 ```
 
 ## restart container
