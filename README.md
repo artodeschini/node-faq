@@ -90,3 +90,27 @@ sudo npm install -g pm2 # installar pm2
 
 pm2 start index.js # roda a app em background
 ```
+
+## help git ver alteracoes realizadas
+
+```bash
+git log --oneline --graph
+```
+
+## git cria uma tag
+
+```bash
+git tag -a 1.0.0 -m "fianalizado com postgres"
+```
+
+## git checkout em uma tag especifica
+
+```bash
+git checkout tags/1.0.0
+```
+
+## git push tags
+
+```bash
+git push -u origin --tags
+```
