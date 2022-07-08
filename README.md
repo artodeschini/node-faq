@@ -22,13 +22,15 @@
 npm clean-install
 ```
 
-## start app
+## start app em desenvolvimento
 
 ```bash
 # para desenvolvimento
 nodemon index.js
 
 ## in production
+npm install pm2 -g --save
+pm2 index.js
 ```
 
 ## install nodedemon para desenvolvimento nao parar o servidor
